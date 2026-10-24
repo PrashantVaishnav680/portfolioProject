@@ -215,7 +215,7 @@ contactForm?.addEventListener("submit", async (event) => {
     }
 
     const response = await fetch(
-      "http://localhost:3000/api/contact-form",
+      "https://portfolio-backend-ydw1.onrender.com/api/contact-form",
       {
         method: "POST",
         headers: {
