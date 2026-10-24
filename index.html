@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio website</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <main>
+
+        <aside class="sidebar" data-sidebar>
+
+            <div class="sidebar-info">
+                <figure class="avatar-box">
+                    <img src="./assets/images/my-avatar.png" alt="Prashant Vaishnav" width="80">
+                </figure>
+
+                <div class="info-content">
+                    <h1 class="name" title="Prashant Vaishnav">Prashant Vaishnav</h1>
+                    <p class="title">Web developer</p>
+                </div>
+
+                <button class="info-more-btn" data-sidebar-btn>
+                    <span>Show Contacts</span>
+                    <ion-icon name="chevron-down"></ion-icon>
+                </button>
+            </div>
+
+            <div class="sidebar-info_more">
+
+                <div class="separator"></div>
+                <ul class="contact-list">
+
+                    <li class="contact-item">
+                        <div class="icon-box">
+                            <ion-icon name="mail-outline"></ion-icon>
+                        </div>
+                        <div class="contact-info">
+                            <p class="contact-title">Email</p>
+                            <a href="mailto:prashantvaishnav39@gmail.com"
+                                class="contact-link">prashantvaishnav39@gmail.com</a>
+                        </div>
+
+                    </li>
+
+                    <li class="contact-item">
+
+                        <div class="icon-box">
+                            <ion-icon name="phone-portrait-outline"></ion-icon>
+                        </div>
+
+                        <div class="contact-info">
+                            <p class="contact-title">Phone</p>
+
+                            <a href="tel:+917014811680" class="contact-link">+91 7014811680</a>
+                        </div>
+
+                    </li>
+
+                    <li class="contact-item">
+
+                        <div class="icon-box">
+                            <ion-icon name="calendar-outline"></ion-icon>
+                        </div>
+
+                        <div class="contact-info">
+                            <p class="contact-title">Birthday</p>
+
+                            <time datetime="2005-11-01">November 01, 2005</time>
+                        </div>
+
+                    </li>
+
+                    <li class="contact-item">
+
+                        <div class="icon-box">
+                            <ion-icon name="location-outline"></ion-icon>
+                        </div>
+
+                        <div class="contact-info">
+                            <p class="contact-title">Location</p>
+
+                            <address>Navsari, Gujarat, India</address>
+                        </div>
+
+                    </li>
+
+                </ul>
+
+                <div class="separator"></div>
+
+                <ul class="social-list">
+
+                    <li class="social-item">
+                        <a href="https://github.com/PrashantVaishnav680" target="_blank" rel="noopener noreferrer" class="social-link" title="GitHub">
+                            <ion-icon name="logo-github"></ion-icon>
+                        </a>
+                    </li>
+
+                    <li class="social-item">
+                        <a href="https://www.geeksforgeeks.org/profile/prashant01" target="_blank" rel="noopener noreferrer" class="social-link" title="GeeksforGeeks">
+                            <ion-icon name="code-slash-outline"></ion-icon>
+                        </a>
+                    </li>
+
+                    <li class="social-item">
+                        <a href="https://www.instagram.com/prashant01_11/" target="_blank" rel="noopener noreferrer" class="social-link" title="Instagram">
+                            <ion-icon name="logo-instagram"></ion-icon>
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </aside>
+
+        <!--#main-content-->
+
+        <div class="main-content">
+            <!--
+        - #NAVBAR
+      -->
+            <nav class="navbar">
+
+                <ul class="navbar-list">
+
+                    <li class="navbar-item">
+                        <button class="navbar-link active" data-nav-link="about">About</button>
+                    </li>
+
+                    <li class="navbar-item">
+                        <button class="navbar-link" data-nav-link="portfolio">Project</button>
+                    </li>
+
+                    <li class="navbar-item">
+                        <button class="navbar-link" data-nav-link="contact">Contact</button>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+
+            <!--- #ABOUT-->
+
+            <article class="about active" data-page="about">
+
+                <header>
+                    <h2 class="h2 article-title">About me</h2>
+                </header>
+
+
+                <section class="about-text">
+                    <p>
+                        I'm a B.Tech Computer Science and Engineering student
+                        specializing in Cybersecurity. I'm passionate about
+                        web development, building secure applications, and
+                        exploring new technologies. I enjoy turning ideas
+                        into simple, creative, and user-friendly digital experiences.
+                    </p>
+
+                    <p>
+                        My focus is on developing responsive websites and
+                        full-stack applications using HTML, CSS, JavaScript,
+                        React, Node.js, Express.js, and MongoDB. I'm also
+                        strengthening my problem-solving skills with C++
+                        and learning web security to build safer applications.
+                        My goal is to create innovative projects that combine
+                        functionality, creativity, and security.
+                    </p>
+                </section>
+
+                <!--- service-->
+                <section class="service">
+                    <h3 class="h3 service-title">What i'm doing</h3>
+                    <ul class="service-list">
+                        <li class="service-item">
+
+                            <div class="service-icon-box">
+                                <img src="./assets/images/web_development.png" alt="Web development icon" width="40">
+                            </div>
+
+                            <div class="service-content-box">
+                                <h4 class="h4 service-item-title">Web Development</h4>
+                                <p class="service-item-text">
+                                    Creating responsive and interactive websites with modern web technologies.
+                                </p>
+                            </div>
+
+                        </li>
+
+                        <li class="service-item">
+
+                            <div class="service-icon-box">
+                                <img src="./assets/images/frontend.png" alt="Frontend development icon" width="40">
+                            </div>
+
+                            <div class="service-content-box">
+                                <h4 class="h4 service-item-title">Frontend Development</h4>
+                                <p class="service-item-text">
+                                    Designing clean, attractive, and user-friendly interfaces for web applications.
+                                </p>
+                            </div>
+
+                        </li>
+
+                        <li class="service-item">
+
+                            <div class="service-icon-box">
+                                <img src="./assets/images/backend.png" alt="Backend Development icon" width="40">
+                            </div>
+
+                            <div class="service-content-box">
+                                <h4 class="h4 service-item-title">Backend Development</h4>
+                                <p class="service-item-text">
+                                    Developing APIs, authentication systems, and database-driven applications using
+                                    Node.js and MongoDB.
+                                </p>
+                            </div>
+
+                        </li>
+
+                        <li class="service-item">
+
+                            <div class="service-icon-box">
+                                <img src="./assets/images/cybersecurity.png" alt="Cybersecurity icon" width="40">
+                            </div>
+
+                            <div class="service-content-box">
+                                <h4 class="h4 service-item-title">Cybersecurity</h4>
+                                <p class="service-item-text">
+                                    Learning web security, identifying common vulnerabilities, and exploring techniques
+                                    to build more secure applications.
+                                </p>
+                            </div>
+
+                        </li>
+                    </ul>
+                </section>
+
+                <!--- testimonials-->
+                <section class="testimonials">
+
+                    <h3 class="h3 testimonials-title">Testimonials</h3>
+
+                    <ul class="testimonials-list has-scrollbar">
+
+                        <li class="testimonials-item">
+                            <div class="content-card" data-testimonials-item>
+
+                                <figure class="testimonials-avatar-box">
+                                    <img src="./assets/images/avatar-1.png" alt="Manthan vaghani" width="60"
+                                        data-testimonials-avatar>
+                                </figure>
+
+
+                                <h4 class="h4 testimonials-item-title" data-testimonials-title>
+                                    Manthan Vaghani
+                                </h4>
+
+                                <div class="testimonials-text" data-testimonials-text>
+                                    <p>
+                                        I hired Prashant to assist me with completing my
+                                        internship tasks and technical assignments.
+                                        He demonstrated strong problem-solving skills,
+                                        technical knowledge, and dedication throughout
+                                        the work. He completed the assigned tasks efficiently
+                                        and delivered quality results on time.
+                                        I appreciated his supportive attitude and
+                                        commitment to getting the work done.
+                                    </p>
+                                </div>
+
+
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </section>
+
+                <!--- testimonials modal-->
+
+                <div class="modal-container" data-modal-container>
+
+                    <div class="overlay" data-overlay></div>
+
+                    <section class="testimonials-modal">
+
+                        <button class="modal-close-btn" data-modal-close-btn>
+                            <ion-icon name="close-outline"></ion-icon>
+                        </button>
+
+                        <div class="modal-img-wrapper">
+                            <figure class="modal-avatar-box">
+                                <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="80" data-modal-img>
+                            </figure>
+
+                            <img src="./assets/images/icon-quote.svg" alt="quote icon">
+                        </div>
+
+                        <div class="modal-content">
+
+                            <h4 class="h3 modal-title" data-modal-title>Manthan Vaghani</h4>
+
+                            <time datetime="2026-10-20">20 October, 2026</time>
+
+                            <div data-modal-text>
+                                <p>
+                                    I hired Prashant to assist me with completing my
+                                    internship tasks and technical assignments.
+                                    He demonstrated strong problem-solving skills,
+                                    technical knowledge, and dedication throughout
+                                    the work. He completed the assigned tasks efficiently
+                                    and delivered quality results on time.
+                                    I appreciated his supportive attitude and
+                                    commitment to getting the work done.
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </section>
+
+                </div>
+
+            </article>
+
+            <!--- #PROJECT -->
+
+            <article class="portfolio" data-page="portfolio">
+                <header>
+                    <h2 class="h2 article-title">Project</h2>
+                </header>
+
+                <section class="projects">
+                    <ul class="filter-list">
+
+                        <li class="filter-item">
+                            <button class="active" data-filter-btn>All</button>
+                        </li>
+
+                        <li class="filter-item">
+                            <button data-filter-btn>Web development</button>
+                        </li>
+
+                        <li class="filter-item">
+                            <button data-filter-btn>Frontend</button>
+                        </li>
+
+                        <li class="filter-item">
+                            <button data-filter-btn>Backend</button>
+                        </li>
+
+                        <li class="filter-item">
+                            <button data-filter-btn>Cybersecurity</button>
+                        </li>
+
+                    </ul>
+
+                    <div class="filter-select-box">
+
+                        <button class="filter-select" data-select>
+
+                            <div class="select-value" data-select-value>Select category</div>
+
+                            <div class="select-icon">
+                                <ion-icon name="chevron-down"></ion-icon>
+                            </div>
+
+                        </button>
+
+                        <ul class="select-list">
+
+                            <li class="select-item">
+                                <button data-select-item>All</button>
+                            </li>
+
+                            <li class="select-item">
+                                <button data-select-item>Web development</button>
+                            </li>
+
+                            <li class="select-item">
+                                <button data-select-item>Frontend</button>
+                            </li>
+
+                            <li class="select-item">
+                                <button data-select-item>Backend</button>
+                            </li>
+
+                            <li class="select-item">
+                                <button data-select-item>Cybersecurity</button>
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                    <ul class="project-list">
+
+                        <!-- Translator -->
+                        <li class="project-item active" data-filter-item data-category="web development|frontend">
+                            <div class="project-card">
+                                <a class="project-preview-link" href="https://language-translator-eta-ten.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Open Translator demo">
+                                    <figure class="project-img">
+                                        <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
+                                        <img src="./assets/images/project-1.png" alt="Translator project preview" loading="lazy">
+                                    </figure>
+                                </a>
+                                <h3 class="project-title">Language Translator</h3>
+                                <p class="project-category">Frontend · Web Development</p>
+                                <div class="project-actions">
+                                    <a class="project-btn project-demo" href="https://language-translator-eta-ten.vercel.app/" target="_blank" rel="noopener noreferrer"><ion-icon name="open-outline"></ion-icon> Live Demo</a>
+                                    <a class="project-btn project-repo" href="https://github.com/PrashantVaishnav680/translator" target="_blank" rel="noopener noreferrer"><ion-icon name="logo-github"></ion-icon> GitHub Repo</a>
+                                </div>
+                            </div>
+                        </li>
+
+                        <!-- Weather Web App -->
+                        <li class="project-item active" data-filter-item data-category="web development|frontend">
+                            <div class="project-card">
+                                <a class="project-preview-link" href="https://weather-web-app-psi-eight.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Open Weather Web App demo">
+                                    <figure class="project-img">
+                                        <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
+                                        <img src="./assets/images/project-2.png" alt="Weather Web App project preview" loading="lazy">
+                                    </figure>
+                                </a>
+                                <h3 class="project-title">Weather Web App</h3>
+                                <p class="project-category">Frontend · Web Development</p>
+                                <div class="project-actions">
+                                    <a class="project-btn project-demo" href="https://weather-web-app-psi-eight.vercel.app/" target="_blank" rel="noopener noreferrer"><ion-icon name="open-outline"></ion-icon> Live Demo</a>
+                                    <a class="project-btn project-repo" href="https://github.com/PrashantVaishnav680?tab=repositories" target="_blank" rel="noopener noreferrer"><ion-icon name="logo-github"></ion-icon> Find Repo</a>
+                                </div>
+                            </div>
+                        </li>
+
+                        <!-- Employee Management System -->
+                        <li class="project-item active" data-filter-item data-category="web development|backend">
+                            <div class="project-card">
+                                <a class="project-preview-link" href="https://github.com/PrashantVaishnav680?tab=repositories" target="_blank" rel="noopener noreferrer" aria-label="Find Employee Management System repository">
+                                    <figure class="project-img">
+                                        <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
+                                        <img src="./assets/images/project-3.png" alt="Employee Management System project preview" loading="lazy">
+                                    </figure>
+                                </a>
+                                <h3 class="project-title">Employee Management System</h3>
+                                <p class="project-category">Backend · Web Development</p>
+                                <div class="project-actions">
+                                    <a class="project-btn project-demo project-btn-disabled" aria-disabled="true" title="No public demo link was provided"><ion-icon name="eye-outline"></ion-icon> Demo unavailable</a>
+                                    <a class="project-btn project-repo" href="https://github.com/PrashantVaishnav680?tab=repositories" target="_blank" rel="noopener noreferrer"><ion-icon name="logo-github"></ion-icon> Find Repo</a>
+                                </div>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </section>
+
+            </article>
+
+            <!-- Contact  -->
+
+            <article class="contact" data-page="contact">
+
+                <header>
+                    <h2 class="h2 article-title">Contact</h2>
+                </header>
+
+                <section class="mapbox" data-mapbox>
+                    <figure>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d59619.19304137072!2d72.90351621355144!3d20.94449941649514!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be0f795909b2c77%3A0x1494cfa5f558f3dd!2sNavsari%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1792848304889!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                    </figure>
+                </section>
+
+                <!-- Contact form -->
+                <section class="contact-form">
+
+                    <h3 class="h3 form-title">Contact Form</h3>
+
+                    <form action="post" class="form" data-form>
+
+                        <div class="input-wrapper">
+                            <input type="text" name="name" class="form-input" placeholder="Full name" required
+                                data-form-input>
+
+                            <input type="email" name="email" class="form-input" placeholder="Email address" required
+                                data-form-input>
+
+                            <input type="text" name="subject" class="form-input" placeholder="Subject" required
+                                data-form-input>
+                        </div>
+
+                        <textarea name="message" class="form-input" placeholder="Your Message" required
+                            data-form-input></textarea>
+
+                        <button class="form-btn" type="submit" data-form-btn>
+                            <ion-icon name="paper-plane"></ion-icon>
+                            <span>Send Message</span>
+                        </button>
+
+                    </form>
+
+                </section>
+
+            </article>
+
+        </div>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="script.js"></script>
+    <!-- - ionicon link-->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
+ 
