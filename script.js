@@ -189,7 +189,6 @@ navigationLinks.forEach((link) => {
 // ======================================
 
 const contactForm = document.querySelector("[data-form]");
-const formInputs = document.querySelectorAll("[data-form-input]");
 const formSubmitBtn = document.querySelector("[data-form-btn]");
 
 contactForm?.addEventListener("submit", async (event) => {
@@ -202,45 +201,56 @@ contactForm?.addEventListener("submit", async (event) => {
 
   const formData = new FormData(contactForm);
 
-  const data = {
-    name: formData.get("name")?.toString().trim(),
-    email: formData.get("email")?.toString().trim(),
-    subject: "Portfolio Contact Form",
-    message: formData.get("message")?.toString().trim(),
+  const payload = {
+    name: formData.get("name")?.toString().trim() || "",
+    email: formData.get("email")?.toString().trim() || "",
+    subject: formData.get("subject")?.toString().trim() || "Portfolio Contact Form",
+    message: formData.get("message")?.toString().trim() || "",
   };
+
+  const submitBtnText = formSubmitBtn?.querySelector("span");
+  const originalBtnText = submitBtnText ? submitBtnText.textContent : "Send Message";
 
   try {
     if (formSubmitBtn) {
       formSubmitBtn.disabled = true;
+      if (submitBtnText) submitBtnText.textContent = "Sending...";
     }
 
-    const response = await fetch(
-      "https://portfolio-backend-ydw1.onrender.com/api/contact-form",
-      {
+    const apiUrl = "https://portfolio-backend-ydw1.onrender.com/api/contact-form";
+    let result;
+
+    if (typeof window.axios !== "undefined") {
+      const response = await window.axios.post(apiUrl, payload, {
+        headers: { "Content-Type": "application/json" },
+      });
+      result = response.data;
+    } else {
+      const response = await fetch(apiUrl, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      result = await response.json().catch(() => ({}));
+      if (!response.ok) {
+        throw new Error(result.message || "Failed to send message.");
       }
-    );
-
-    const result = await response.json().catch(() => ({}));
-
-    if (!response.ok) {
-      throw new Error(result.message || "Failed to send message.");
     }
 
-    alert(result.message || "Message sent successfully!");
+    alert(result.message || "Thank you! Your message has been sent successfully.");
     contactForm.reset();
   } catch (error) {
     console.error("Contact form error:", error);
-    alert(
-      "Unable to send your message. Please check your backend server and try again."
-    );
+    const errorMessage =
+      error.response?.data?.message ||
+      error.response?.data?.error ||
+      error.message ||
+      "Unable to send your message. Please check your network connection and try again.";
+    alert(errorMessage);
   } finally {
     if (formSubmitBtn) {
       formSubmitBtn.disabled = false;
+      if (submitBtnText) submitBtnText.textContent = originalBtnText;
     }
   }
 });

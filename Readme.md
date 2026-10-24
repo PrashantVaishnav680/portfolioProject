@@ -1,6 +1,6 @@
 # Portfolio Website
 
-A personal portfolio website built using HTML, CSS, and JavaScript to showcase my skills, projects, and experience in web development and cybersecurity. The website includes a contact form powered by Node.js, Express, and Nodemailer to send emails to both the website owner and the visitor.
+A personal portfolio website built using HTML, CSS, and JavaScript to showcase my skills, projects, and experience in web development and cybersecurity. The website includes a contact form powered by Node.js, Express, and the Resend Email API to send notification emails to the website owner and optional confirmations to visitors.
 
 ## Features
 
@@ -23,12 +23,13 @@ A personal portfolio website built using HTML, CSS, and JavaScript to showcase m
 ### Backend
 - Node.js
 - Express.js
-- Nodemailer
+- Resend Node.js SDK
+- Express Rate Limit
 - CORS
 - dotenv
 
 ### Email Service
-- Gmail SMTP
+- Resend Email API (HTTPS)
 
 ## Project Structure
 
@@ -69,11 +70,13 @@ npm install
 Create a `.env` file in the project root:
 
 ```env
-EMAIL_USER=your-email@gmail.com
-EMAIL_PASS=your-gmail-app-password
+RESEND_API_KEY=re_your_resend_api_key
+EMAIL_FROM=onboarding@resend.dev
+EMAIL_TO=your-email@example.com
+FRONTEND_URL=https://portfolio-project-sigma-steel.vercel.app
 ```
 
-Use a Gmail App Password if your Nodemailer configuration uses Gmail SMTP. Do not use your regular Gmail password.
+Configure your Resend API Key and verified sender address. Use onboarding@resend.dev for testing with your registered account email.
 
 **Important:** Never upload your `.env` file to GitHub or expose email credentials in frontend JavaScript.
 
@@ -112,8 +115,8 @@ http://localhost:3000/api/contact-form
 1. A visitor fills in the contact form.
 2. JavaScript validates the form and sends the data to the Express API.
 3. The backend validates the submitted fields.
-4. Nodemailer sends an email containing the visitor's message to the website owner.
-5. Nodemailer sends a confirmation email to the visitor.
+4. Resend sends an HTTPS API request to deliver the message to the website owner with reply-to set to the visitor.
+5. If a verified custom domain is configured, Resend also delivers an acknowledgement email to the visitor.
 
 ### API Endpoint
 
